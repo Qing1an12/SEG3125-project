@@ -1,0 +1,74 @@
+body {
+    background-color: #fffef6; 
+    /* background-image: url('../resources/egg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto; */
+}
+
+@font-face {
+    font-family: 'LedlightFont';
+    src: url('../resources/LEDLIGHT.otf'); 
+}
+@font-face {
+    font-family: 'typewriterFont';
+    src: url('../resources/Punk Typewriter.otf'); 
+}
+
+/* Custom Title Font Setup */
+.custom-title-font {
+    font-family: 'LedlightFont', monospace;
+}
+
+.text-gray {
+    color: #888888; 
+}
+
+/* Styling for the typed out "About Me" paragraph */
+.typewriter-text {
+    font-family: 'typewriterFont', monospace;
+    font-size: 2rem; 
+    color: #444444; 
+    line-height: 1.3;
+    white-space: pre-wrap; 
+    max-width: 320px;
+}
+
+
+/* Removes the tiny invisible space below images */
+a img {
+    display: block; 
+}
+
+/* --- Case Studies Sticky Notes --- */
+.sticky-note {
+    transition: all 0.3s ease-in-out; 
+    position: relative;
+    text-decoration: none;
+}
+
+.small-desc {
+    font-family: 'typewriterFont', monospace; 
+    font-size: 1.5rem;
+    color: #8c073a; 
+    transition: all 0.3s ease;
+}
+
+.sticky-note img {
+    border: 8px solid white;
+    border-bottom: 24px solid white; 
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 220px; 
+    height: auto;
+}
+
+.note-1 { transform: rotate(-5deg); z-index: 1; }
+.note-2 { transform: rotate(4deg); z-index: 2; margin-top: -20px; } 
+.note-3 { transform: rotate(-3deg); z-index: 3; margin-top: -20px; }
+.note-4 { transform: rotate(6deg); z-index: 4; margin-top: -20px; }
+
+.sticky-note:hover {
+    transform: scale(1.1) translateX(-15px) rotate(0deg); 
+    z-index: 100;
+}

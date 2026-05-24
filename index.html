@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="position-relative" style="margin: 0; padding: 0; overflow-x: hidden;">
+
+    <div class="position-absolute top-0 start-0 p-4 p-md-5" style="width: 35%; z-index: 10;">
+        <p id="about-me-text" class="typewriter-text"></p>
+    </div>
+
+    <div class="d-flex flex-column align-items-center vh-100 w-100" style="z-index: 5; position: relative;">
+        
+        <div class="w-100 text-center mt-5" style="position: relative; z-index: 5;">
+            
+            <!-- Flexbox to center the content -->
+            <div class="d-flex justify-content-center mb-3">
+                <a href="index.html" class="position-relative d-inline-block text-decoration-none">
+                    <img src="../resources/pattern.png" alt="Home Button" class="img-fluid" style="max-width: 100px; height: auto;">
+                </a>
+            </div>
+            <h1 class="text-gray custom-title-font display-3 mb-1">Hello, World!</h1>
+            
+        </div>
+
+        <a class="mt-auto w-50 d-flex justify-content-center" style="margin-bottom: 0;">
+            <img src="../resources/Lanita_transparent.png" alt="Portfolio Graphic" class="img-fluid d-block" style="margin-bottom: 0;">
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const speed = 10;
+            let index = 0;
+            const targetElement = document.getElementById("about-me-text");
+
+            fetch('story.txt')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(aboutText => {
+                    function typeWriter() {
+                        if (index < aboutText.length) {
+                            targetElement.innerHTML += aboutText.charAt(index);
+                            index++;
+                            setTimeout(typeWriter, speed);
+                        }
+                    }
+                    typeWriter();
+                })
+                .catch(error => {
+                    console.error('Error loading story.txt:', error);
+                    targetElement.innerHTML = "Error loading 'About Me' text.";
+                });
+        });
+    </script>
+
+    <div class="position-fixed top-50 end-0 translate-middle-y p-4 p-md-5 d-flex flex-column align-items-end" style="z-index: 20;">
+        <a href="service.html" class="sticky-note note-1 d-flex align-items-center text-decoration-none">
+            <span class="small-desc me-3">01. Service</span>
+            <img src="../resources/yun2.jpg" alt="Service Site Case Study">
+        </a>
+        <a href="memory.html" class="sticky-note note-2 d-flex align-items-center text-decoration-none">
+            <span class="small-desc me-3">02. Memory Game</span>
+            <img src="../resources/mi1.jpg" alt="Memory Game Case Study">
+        </a>
+        <a href="ecommerce.html" class="sticky-note note-3 d-flex align-items-center text-decoration-none">
+            <span class="small-desc me-3">03. E-Commerce</span>
+            <img src="../resources/va1.jpg" alt="E-Commerce Case Study">
+        </a>
+        <a href="analytics.html" class="sticky-note note-4 d-flex align-items-center text-decoration-none">
+            <span class="small-desc me-3">04. Analytics</span>
+            <img src="../resources/yun1.jpg" alt="Analytics Case Study">
+        </a>
+    </div>
+</body>
+</html>
