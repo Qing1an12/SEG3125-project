@@ -1,6 +1,6 @@
 body {
     background-color: #fffef6; 
-    background-image: url('../resources/egg.png');
+    background-image: url('resources/egg.png');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -9,11 +9,11 @@ body {
 
 @font-face {
     font-family: 'LedlightFont';
-    src: url('../resources/LEDLIGHT.otf'); 
+    src: url('resources/LEDLIGHT.otf'); 
 }
 @font-face {
     font-family: 'typewriterFont';
-    src: url('../resources/Punk Typewriter.otf'); 
+    src: url('resources/Punk Typewriter.otf'); 
 }
 
 /* Custom Title Font Setup */
@@ -50,7 +50,7 @@ a img {
 
 .small-desc {
     font-family: 'typewriterFont', monospace; 
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #8c073a; 
     transition: all 0.3s ease;
 }
