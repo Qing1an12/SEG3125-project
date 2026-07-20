@@ -78,7 +78,7 @@ a img {
 }
 
 /* --- Edge Background Blurs --- */
-body::before, body::after {
+.portfolio-home::before, .portfolio-home::after {
     content: "";
     position: fixed;
     top: 0;
@@ -90,14 +90,14 @@ body::before, body::after {
 }
 
 /* Left edge blur */
-body::before {
+.portfolio-home::before {
     left: 0;
     -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
 /* Right edge blur */
-body::after {
+.portfolio-home::after {
     right: 0;
     -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
